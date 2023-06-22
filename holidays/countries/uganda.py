@@ -80,7 +80,7 @@ class UG(Uganda):
     pass
 
 
-class UGN(Uganda):
+class UGA(Uganda):
     pass
 
 

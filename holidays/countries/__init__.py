@@ -132,6 +132,7 @@ from .thailand import Thailand, TH, THA
 from .tunisia import Tunisia, TN, TUN
 from .turkey import Turkey, TR, TUR
 from .ukraine import Ukraine, UA, UKR
+from .uganda import Uganda, UG, UGA
 from .united_arab_emirates import UnitedArabEmirates, AE, ARE
 from .united_kingdom import UnitedKingdom, GB, GBR, UK
 from .united_states import UnitedStates, US, USA
