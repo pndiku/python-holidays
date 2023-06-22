@@ -15,7 +15,7 @@ from holidays.holiday_base import HolidayBase
 from holidays.holiday_groups import ChristianHolidays, InternationalHolidays, IslamicHolidays
 
 
-class Uganda(HolidayBase, ChristianHolidays, InternationalHolidays):
+class Uganda(HolidayBase, ChristianHolidays, InternationalHolidays, IslamicHolidays):
     """
     https://en.wikipedia.org/wiki/Public_holidays_in_Uganda
 
