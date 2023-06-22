@@ -154,6 +154,7 @@ COUNTRIES: RegistryDict = {
         "VIR",
         "HolidaysVI",
     ),
+    "uganda": ("Uganda", "UG", "UGA"),
     "united_states": ("UnitedStates", "US", "USA"),
     "uruguay": ("Uruguay", "UY", "URY"),
     "uzbekistan": ("Uzbekistan", "UZ", "UZB"),
