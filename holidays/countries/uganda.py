@@ -9,9 +9,6 @@
 #  Website: https://github.com/dr-prodigy/python-holidays
 #  License: MIT (see LICENSE file)
 
-from datetime import date
-from datetime import timedelta as td
-
 from holidays.calendars import _CustomIslamicCalendar
 from holidays.constants import JAN, FEB, MAY, JUN, JUL, AUG, SEP, OCT
 from holidays.holiday_base import HolidayBase
@@ -37,9 +34,6 @@ class Uganda(HolidayBase, ChristianHolidays, InternationalHolidays):
         IslamicHolidays.__init__(self, calendar=UgandaIslamicCalendar())
         super().__init__(*args, **kwargs)
 
-    def _add_observed(self, dt: date, days: int = +1) -> None:
-        if self.observed and self._is_sunday(dt):
-            self._add_holiday("%s (Observed)" % self[dt], dt + td(days=days))
 
     def _populate(self, year):
         if year <= 1962:
@@ -48,7 +42,7 @@ class Uganda(HolidayBase, ChristianHolidays, InternationalHolidays):
         super()._populate(year)
 
         # New Year's Day
-        self._add_observed(self._add_new_years_day("New Year's Day"))
+        self._add_new_years_day("New Year's Day")
 
         # Good Friday
         self._add_good_friday("Good Friday")
@@ -57,29 +51,29 @@ class Uganda(HolidayBase, ChristianHolidays, InternationalHolidays):
         self._add_easter_monday("Easter Monday")
 
         # Labour Day
-        self._add_observed(self._add_labor_day("Labour Day"))
+        self._add_labor_day("Labour Day")
 
         if year >= 1986:
             # Liberation Day
-            self._add_observed(self._add_holiday("Liberation Day", JAN, 26))
+            self._add_holiday("Liberation Day", JAN, 26)
 
         if year >= 2015:
             # Archbishop Janani Luwum Day
-            self._add_observed(self._add_holiday("Archbishop Janani Luwum Day", FEB, 16))
+            self._add_holiday("Archbishop Janani Luwum Day", FEB, 16)
 
         # Uganda Martyrs' Day
-        self._add_observed(self._add_holiday("Uganda Martyrs' Day"), JUN, 3)
+        self._add_holiday("Uganda Martyrs' Day", JUN, 3)
 
         # National Heroes' Day
-        self._add_observed(self._add_holiday("National Heroes' Day"), JUN, 9)
+        self._add_holiday("National Heroes' Day", JUN, 9)
         # Independence Day
-        self._add_observed(self._add_holiday("Independence Day", OCT, 9))
+        self._add_holiday("Independence Day", OCT, 9)
 
         # Christmas Day
-        self._add_observed(self._add_christmas_day("Christmas Day"), days=+2)
+        self._add_christmas_day("Christmas Day")
 
         # Boxing Day
-        self._add_observed(self._add_christmas_day_two("Boxing Day"))
+        self._add_christmas_day_two("Boxing Day")
 
 
 class UG(Uganda):
